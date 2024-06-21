@@ -12,7 +12,7 @@ class Hotels extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CupertinoApp(
+    return const MaterialApp(
       title: 'Hotels_App',
       home: FirstScreen(),
     );
