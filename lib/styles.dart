@@ -24,3 +24,11 @@ const BoxDecoration commonButtonStyle = BoxDecoration(
     ],
   ),
 );
+
+const TextStyle dropDownButtonText = TextStyle(
+  fontFamily: 'Philosopher',
+  fontSize: 14,
+  letterSpacing: 0.5,
+  fontWeight: FontWeight.w400,
+  color: Color.fromRGBO(59, 59, 59, 1),
+);

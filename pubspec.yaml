@@ -57,6 +57,12 @@ flutter:
     - assets/images/imagefirst.png
     - assets/images/imagesecond.png
     - assets/images/imagethird.png
+    - assets/images/search.png
+    - assets/images/arrow_down.png
+    - assets/images/room.png
+    - assets/images/data.png
+    - assets/images/person.png
+    - assets/images/phone.png
     - assets/fonts/
   fonts:
     - family: Philosopher

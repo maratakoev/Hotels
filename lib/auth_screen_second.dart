@@ -20,6 +20,7 @@ class AuthScreenSecond extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
+      backgroundColor: Color.fromRGBO(250, 253, 255, 1),
       body: Column(
         children: [
           SizedBox(height: 87),
@@ -31,7 +32,7 @@ class AuthScreenSecond extends StatelessWidget {
           SizedBox(height: 32),
           Text('или'),
           SizedBox(height: 32),
-          const Button()
+          Button()
         ],
       ),
     );
@@ -47,14 +48,14 @@ class DropDownButtonFirst extends StatefulWidget {
 
 class _DropDownButtonFirst extends State<DropDownButtonFirst> {
   final List<String> items = [
-    'Item1',
-    'Item2',
-    'Item3',
-    'Item4',
-    'Item5',
-    'Item6',
-    'Item7',
-    'Item8',
+    'Название отеля 1',
+    'Название отеля 2',
+    'Название отеля 3',
+    'Название отеля 4',
+    'Название отеля 5',
+    'Название отеля 6',
+    'Название отеля 7',
+    'Название отеля 8',
   ];
   String? selectedValue;
 
@@ -64,25 +65,20 @@ class _DropDownButtonFirst extends State<DropDownButtonFirst> {
       child: DropdownButtonHideUnderline(
         child: DropdownButton2<String>(
           isExpanded: true,
-          hint: const Row(
+          hint: Row(
             children: [
-              Icon(
-                Icons.list,
-                size: 16,
-                color: Colors.yellow,
-              ),
-              SizedBox(
+              Image.asset('assets/images/room.png'),
+              const SizedBox(
                 width: 4,
               ),
-              Expanded(
-                child: Text(
-                  'Select Item',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.yellow,
+              const Expanded(
+                child: Padding(
+                  padding: EdgeInsets.only(left: 15),
+                  child: Text(
+                    'Ваш отель',
+                    style: dropDownButtonText,
+                    overflow: TextOverflow.ellipsis,
                   ),
-                  overflow: TextOverflow.ellipsis,
                 ),
               ),
             ],
@@ -90,14 +86,22 @@ class _DropDownButtonFirst extends State<DropDownButtonFirst> {
           items: items
               .map((String item) => DropdownMenuItem<String>(
                     value: item,
-                    child: Text(
-                      item,
-                      style: const TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                    child: Container(
+                      decoration: const BoxDecoration(
+                          border: Border(
+                              bottom: BorderSide(
+                                  color: Color.fromRGBO(244, 244, 244, 1)))),
+                      child: SizedBox(
+                        width: double.infinity,
+                        child: Padding(
+                          padding: const EdgeInsets.only(bottom: 9),
+                          child: Text(
+                            item,
+                            style: dropDownButtonText,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
                       ),
-                      overflow: TextOverflow.ellipsis,
                     ),
                   ))
               .toList(),
@@ -108,34 +112,41 @@ class _DropDownButtonFirst extends State<DropDownButtonFirst> {
             });
           },
           buttonStyleData: ButtonStyleData(
-            height: 50,
-            width: 160,
+            height: 57,
+            width: 325,
             padding: const EdgeInsets.only(left: 14, right: 14),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(14),
               border: Border.all(
-                color: Colors.black26,
+                color: const Color.fromRGBO(244, 244, 244, 1),
               ),
-              color: Colors.redAccent,
+              color: const Color.fromARGB(255, 255, 255, 255),
             ),
-            elevation: 2,
+            elevation: 0,
           ),
-          iconStyleData: const IconStyleData(
-            icon: Icon(
-              Icons.arrow_forward_ios_outlined,
-            ),
+          iconStyleData: IconStyleData(
+            icon: Image.asset('assets/images/arrow_down.png'),
             iconSize: 14,
             iconEnabledColor: Colors.yellow,
             iconDisabledColor: Colors.grey,
           ),
           dropdownStyleData: DropdownStyleData(
             maxHeight: 200,
-            width: 200,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(14),
-              color: Colors.redAccent,
+            width: 325,
+            elevation: 0,
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(15),
+                bottomRight: Radius.circular(15),
+              ),
+              border: Border(
+                left: BorderSide(color: Color.fromRGBO(244, 244, 244, 1)),
+                right: BorderSide(color: Color.fromRGBO(244, 244, 244, 1)),
+                bottom: BorderSide(color: Color.fromRGBO(244, 244, 244, 1)),
+              ),
+              color: Color.fromARGB(255, 255, 255, 255),
             ),
-            offset: const Offset(-20, 0),
+            offset: const Offset(0, 12),
             scrollbarTheme: ScrollbarThemeData(
               radius: const Radius.circular(40),
               thickness: WidgetStateProperty.all<double>(6),
@@ -149,7 +160,7 @@ class _DropDownButtonFirst extends State<DropDownButtonFirst> {
         ),
       ),
     );
-    ;
+    
   }
 }
 
@@ -162,14 +173,14 @@ class DropDownButtonSecond extends StatefulWidget {
 
 class _DropDownButtonSecond extends State<DropDownButtonSecond> {
   final List<String> items = [
-    'Item1',
-    'Item2',
-    'Item3',
-    'Item4',
-    'Item5',
-    'Item6',
-    'Item7',
-    'Item8',
+    'Название номера 1',
+    'Название номера 2',
+    'Название номера 3',
+    'Название номера 4',
+    'Название номера 5',
+    'Название номера 6',
+    'Название номера 7',
+    'Название номера 8',
   ];
   String? selectedValue;
 
@@ -179,25 +190,20 @@ class _DropDownButtonSecond extends State<DropDownButtonSecond> {
       child: DropdownButtonHideUnderline(
         child: DropdownButton2<String>(
           isExpanded: true,
-          hint: const Row(
+          hint: Row(
             children: [
-              Icon(
-                Icons.list,
-                size: 16,
-                color: Colors.yellow,
-              ),
-              SizedBox(
+              Image.asset('assets/images/search.png'),
+              const SizedBox(
                 width: 4,
               ),
-              Expanded(
-                child: Text(
-                  'Select Item',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.yellow,
+              const Expanded(
+                child: Padding(
+                  padding: EdgeInsets.only(left: 15),
+                  child: Text(
+                    'Номер',
+                    style: dropDownButtonText,
+                    overflow: TextOverflow.ellipsis,
                   ),
-                  overflow: TextOverflow.ellipsis,
                 ),
               ),
             ],
@@ -205,14 +211,22 @@ class _DropDownButtonSecond extends State<DropDownButtonSecond> {
           items: items
               .map((String item) => DropdownMenuItem<String>(
                     value: item,
-                    child: Text(
-                      item,
-                      style: const TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                    child: Container(
+                      decoration: const BoxDecoration(
+                          border: Border(
+                              bottom: BorderSide(
+                                  color: Color.fromRGBO(244, 244, 244, 1)))),
+                      child: SizedBox(
+                        width: double.infinity,
+                        child: Padding(
+                          padding: const EdgeInsets.only(bottom: 9),
+                          child: Text(
+                            item,
+                            style: dropDownButtonText,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
                       ),
-                      overflow: TextOverflow.ellipsis,
                     ),
                   ))
               .toList(),
@@ -223,34 +237,40 @@ class _DropDownButtonSecond extends State<DropDownButtonSecond> {
             });
           },
           buttonStyleData: ButtonStyleData(
-            height: 50,
-            width: 160,
+            height: 57,
+            width: 325,
             padding: const EdgeInsets.only(left: 14, right: 14),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(14),
               border: Border.all(
-                color: Colors.black26,
+                color: const Color.fromRGBO(244, 244, 244, 1),
               ),
-              color: Colors.redAccent,
+              color: const Color.fromARGB(255, 255, 255, 255),
             ),
-            elevation: 2,
+            elevation: 0,
           ),
-          iconStyleData: const IconStyleData(
-            icon: Icon(
-              Icons.arrow_forward_ios_outlined,
-            ),
+          iconStyleData: IconStyleData(
+            icon: Image.asset('assets/images/arrow_down.png'),
             iconSize: 14,
-            iconEnabledColor: Colors.yellow,
             iconDisabledColor: Colors.grey,
           ),
           dropdownStyleData: DropdownStyleData(
             maxHeight: 200,
-            width: 200,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(14),
-              color: Colors.redAccent,
+            width: 325,
+            elevation: 0,
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(15),
+                bottomRight: Radius.circular(15),
+              ),
+              border: Border(
+                left: BorderSide(color: Color.fromRGBO(244, 244, 244, 1)),
+                right: BorderSide(color: Color.fromRGBO(244, 244, 244, 1)),
+                bottom: BorderSide(color: Color.fromRGBO(244, 244, 244, 1)),
+              ),
+              color: Color.fromARGB(255, 255, 255, 255),
             ),
-            offset: const Offset(-20, 0),
+            offset: const Offset(0, 12),
             scrollbarTheme: ScrollbarThemeData(
               radius: const Radius.circular(40),
               thickness: WidgetStateProperty.all<double>(6),
@@ -264,7 +284,7 @@ class _DropDownButtonSecond extends State<DropDownButtonSecond> {
         ),
       ),
     );
-    ;
+    
   }
 }
 
@@ -277,14 +297,14 @@ class DropDownButtonThird extends StatefulWidget {
 
 class _DropDownButtonThird extends State<DropDownButtonThird> {
   final List<String> items = [
-    'Item1',
-    'Item2',
-    'Item3',
-    'Item4',
-    'Item5',
-    'Item6',
-    'Item7',
-    'Item8',
+    'Дата заезда 1',
+    'Дата заезда 2',
+    'Дата заезда 3',
+    'Дата заезда 4',
+    'Дата заезда 5',
+    'Дата заезда 6',
+    'Дата заезда 7',
+    'Дата заезда 8',
   ];
   String? selectedValue;
 
@@ -294,25 +314,20 @@ class _DropDownButtonThird extends State<DropDownButtonThird> {
       child: DropdownButtonHideUnderline(
         child: DropdownButton2<String>(
           isExpanded: true,
-          hint: const Row(
+          hint: Row(
             children: [
-              Icon(
-                Icons.list,
-                size: 16,
-                color: Colors.yellow,
-              ),
-              SizedBox(
+              Image.asset('assets/images/data.png'),
+              const SizedBox(
                 width: 4,
               ),
-              Expanded(
-                child: Text(
-                  'Select Item',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.yellow,
+              const Expanded(
+                child: Padding(
+                  padding: EdgeInsets.only(left: 15),
+                  child: Text(
+                    'Дата заезда',
+                    style: dropDownButtonText,
+                    overflow: TextOverflow.ellipsis,
                   ),
-                  overflow: TextOverflow.ellipsis,
                 ),
               ),
             ],
@@ -320,14 +335,22 @@ class _DropDownButtonThird extends State<DropDownButtonThird> {
           items: items
               .map((String item) => DropdownMenuItem<String>(
                     value: item,
-                    child: Text(
-                      item,
-                      style: const TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                    child: Container(
+                      decoration: const BoxDecoration(
+                          border: Border(
+                              bottom: BorderSide(
+                                  color: Color.fromRGBO(244, 244, 244, 1)))),
+                      child: SizedBox(
+                        width: double.infinity,
+                        child: Padding(
+                          padding: const EdgeInsets.only(bottom: 9),
+                          child: Text(
+                            item,
+                            style: dropDownButtonText,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
                       ),
-                      overflow: TextOverflow.ellipsis,
                     ),
                   ))
               .toList(),
@@ -338,36 +361,43 @@ class _DropDownButtonThird extends State<DropDownButtonThird> {
             });
           },
           buttonStyleData: ButtonStyleData(
-            height: 50,
-            width: 160,
+            height: 57,
+            width: 325,
             padding: const EdgeInsets.only(left: 14, right: 14),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(14),
               border: Border.all(
-                color: Colors.black26,
+                color: const Color.fromRGBO(244, 244, 244, 1),
               ),
-              color: Colors.redAccent,
+              color: const Color.fromARGB(255, 255, 255, 255),
             ),
-            elevation: 2,
+            elevation: 0,
           ),
-          iconStyleData: const IconStyleData(
-            icon: Icon(
-              Icons.arrow_forward_ios_outlined,
-            ),
+          iconStyleData: IconStyleData(
+            icon: Image.asset('assets/images/arrow_down.png'),
             iconSize: 14,
             iconEnabledColor: Colors.yellow,
             iconDisabledColor: Colors.grey,
           ),
           dropdownStyleData: DropdownStyleData(
             maxHeight: 200,
-            width: 200,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(14),
-              color: Colors.redAccent,
+            width: 325,
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(15),
+                bottomRight: Radius.circular(15),
+              ),
+              border: Border(
+                left: BorderSide(color: Color.fromRGBO(244, 244, 244, 1)),
+                right: BorderSide(color: Color.fromRGBO(244, 244, 244, 1)),
+                bottom: BorderSide(color: Color.fromRGBO(244, 244, 244, 1)),
+              ),
+              color: Color.fromRGBO(255, 255, 255, 1),
             ),
-            offset: const Offset(-20, 0),
+            offset: const Offset(0, 12),
+            elevation: 0,
             scrollbarTheme: ScrollbarThemeData(
-              radius: const Radius.circular(40),
+              radius: const Radius.circular(15),
               thickness: WidgetStateProperty.all<double>(6),
               thumbVisibility: WidgetStateProperty.all<bool>(true),
             ),
@@ -379,7 +409,7 @@ class _DropDownButtonThird extends State<DropDownButtonThird> {
         ),
       ),
     );
-    ;
+    
   }
 }
 

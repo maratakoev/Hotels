@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hotels/auth_screen_first.dart';
 import 'package:hotels/auth_screen_second.dart';
 import 'package:hotels/second_screen.dart';
 import 'styles.dart';
@@ -75,10 +76,8 @@ class _ButtonState extends State<Button> {
           ),
         ),
         onPressed: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => const AuthScreenSecond()));
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const AuthScreenFirst()));
         },
         child: const Text(
           'Поехали',
