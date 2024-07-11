@@ -11,9 +11,16 @@ class Hotels extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    const primaryColor = Color(0xfff82b10);
+    return MaterialApp(
       title: 'Hotels_App',
-      home: FirstScreen(),
+      theme: ThemeData(
+        primaryColor: primaryColor,
+        scaffoldBackgroundColor: const Color(0xffeff1f3),
+        colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
+        useMaterial3: true,
+      ),
+      home: const FirstScreen(),
     );
   }
 }

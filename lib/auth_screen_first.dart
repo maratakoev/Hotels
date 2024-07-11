@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:hotels/auth_screen_second.dart';
 import 'styles.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class AuthScreenFirst extends StatelessWidget {
   const AuthScreenFirst({super.key});
@@ -112,6 +112,13 @@ class _PhoneInputState extends State<PhoneInput> {
         width: 325,
         height: 57,
         child: TextField(
+          inputFormatters: [
+            MaskTextInputFormatter(
+                mask: '+# (###) ###-##-##',
+                filter: {"#": RegExp(r'[0-9]')},
+                type: MaskAutoCompletionType.lazy)
+          ],
+          keyboardType: TextInputType.number,
           decoration: InputDecoration(
               border: InputBorder.none,
               filled: true,

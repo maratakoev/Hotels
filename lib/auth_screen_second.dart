@@ -1,5 +1,6 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
+import 'package:hotels/orders.dart';
 import 'styles.dart';
 
 // class MyApp extends StatelessWidget {
@@ -160,7 +161,6 @@ class _DropDownButtonFirst extends State<DropDownButtonFirst> {
         ),
       ),
     );
-    
   }
 }
 
@@ -284,7 +284,6 @@ class _DropDownButtonSecond extends State<DropDownButtonSecond> {
         ),
       ),
     );
-    
   }
 }
 
@@ -409,7 +408,6 @@ class _DropDownButtonThird extends State<DropDownButtonThird> {
         ),
       ),
     );
-    
   }
 }
 
@@ -441,7 +439,7 @@ class _ButtonState extends State<Button> {
           Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => const AuthScreenSecond()));
+                  builder: (context) => const PersistenBottomNavBarDemo()));
         },
         child: const Text(
           'Сканировать QR',

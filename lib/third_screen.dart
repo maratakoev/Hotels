@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hotels/auth_screen_first.dart';
-import 'package:hotels/auth_screen_second.dart';
 import 'package:hotels/second_screen.dart';
 import 'styles.dart';
 

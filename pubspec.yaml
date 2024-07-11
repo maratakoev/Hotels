@@ -35,6 +35,8 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
   dropdown_button2: ^2.3.9
+  persistent_bottom_nav_bar_v2: ^5.3.0
+  mask_text_input_formatter: ^2.9.0
 
 dev_dependencies:
   flutter_test:
@@ -63,6 +65,10 @@ flutter:
     - assets/images/data.png
     - assets/images/person.png
     - assets/images/phone.png
+    - assets/images/NewOrders.png
+    - assets/images/CurrentOrders.png
+    - assets/images/DoneOrders.png
+
     - assets/fonts/
   fonts:
     - family: Philosopher

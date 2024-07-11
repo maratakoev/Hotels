@@ -32,3 +32,21 @@ const TextStyle dropDownButtonText = TextStyle(
   fontWeight: FontWeight.w400,
   color: Color.fromRGBO(59, 59, 59, 1),
 );
+
+const TextStyle newOrdersTitle = TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.w700,
+    fontFamily: 'Philosopher',
+    color: Color.fromRGBO(59, 59, 59, 1));
+
+const TextStyle ordersHeaderText = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    fontFamily: 'Philosopher',
+    color: Color.fromRGBO(59, 59, 59, 1));
+
+const TextStyle ordersTime = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+    fontFamily: 'Philosopher',
+    color: Color.fromRGBO(59, 59, 59, 1));
