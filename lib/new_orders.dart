@@ -1,16 +1,38 @@
 import 'package:flutter/material.dart';
 import 'styles.dart';
 
-class NewOrdersScreen extends StatelessWidget {
-  // final int itemCount; на будущее
+class Order {
+  final String title;
+  final String number;
+  final String time;
 
+  Order({required this.title, required this.number, required this.time});
+}
+
+//вся страница новых заказов ниже
+class NewOrdersScreen extends StatelessWidget {
   const NewOrdersScreen({
     super.key,
-    // required this.itemCount
   });
 
   @override
   Widget build(BuildContext context) {
+    final orders = [
+      Order(title: 'Провести полную уборку', number: '306', time: '21:56'),
+      Order(title: 'Проверить сантехнику', number: '307', time: '22:30'),
+      Order(title: 'Ремонт кондиционера', number: '308', time: '23:15'),
+      Order(title: 'Замена лампочек', number: '309', time: '08:45'),
+      Order(title: 'Установка розеток', number: '310', time: '09:20'),
+      Order(title: 'Покраска стен', number: '311', time: '10:00'),
+      Order(title: 'Покраска потолка', number: '361', time: '11:20'),
+      Order(title: 'Провести полную уборку', number: '306', time: '21:56'),
+      Order(title: 'Проверить сантехнику', number: '307', time: '22:30'),
+      Order(title: 'Ремонт кондиционера', number: '308', time: '23:15'),
+      Order(title: 'Замена лампочек', number: '309', time: '08:45'),
+      Order(title: 'Установка розеток', number: '310', time: '09:20'),
+      Order(title: 'Покраска стен', number: '311', time: '10:00'),
+      Order(title: 'Покраска потолка', number: '361', time: '11:20'),
+    ];
     return Container(
       color: const Color.fromRGBO(250, 253, 255, 1),
       child: Padding(
@@ -24,17 +46,8 @@ class NewOrdersScreen extends StatelessWidget {
             const SizedBox(height: 16),
             const TitleNewOrders(),
             const SizedBox(height: 24),
-            // ListView.separated(
-            //   itemBuilder: (BuildContext context, int index) {
-            //     return ListTile(
-            //       title: Text('Item $index'),
-            //     );
-            //   },
-            //   separatorBuilder: (BuildContext context, int index) {
-            //     return const Divider();
-            //   },
-            //   itemCount: 10,
-            // ),
+            // ignore: prefer_const_constructors
+            SizedBox(height: 649, width: 326, child: OrdersList(orders: orders))
           ],
         ),
       ),
@@ -42,6 +55,7 @@ class NewOrdersScreen extends StatelessWidget {
   }
 }
 
+//заголовок страницы
 class TitleNewOrders extends StatelessWidget {
   const TitleNewOrders({super.key});
 
@@ -59,6 +73,7 @@ class TitleNewOrders extends StatelessWidget {
   }
 }
 
+//контейнер заказа одного
 class OrderUnit extends StatefulWidget {
   final String title;
   final String number;
@@ -78,6 +93,9 @@ class _OrderUnitState extends State<OrderUnit> {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
+          border: Border.symmetric(
+              vertical: BorderSide(color: Color.fromRGBO(244, 244, 244, 1)),
+              horizontal: BorderSide(color: Color.fromRGBO(244, 244, 244, 1))),
           color: Colors.white,
           borderRadius: BorderRadius.all(Radius.circular(15))),
       child: SizedBox(
@@ -118,5 +136,33 @@ class _OrderUnitState extends State<OrderUnit> {
         ),
       ),
     );
+  }
+}
+
+//список заказов ниже
+class OrdersList extends StatelessWidget {
+  final List<Order> orders;
+  const OrdersList({
+    super.key,
+    required this.orders,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.separated(
+        padding: EdgeInsets.zero,
+        separatorBuilder: (BuildContext context, int index) => const SizedBox(
+              height: 20,
+            ),
+        itemCount: orders.length,
+        itemBuilder: (context, i) {
+          final order = orders[i];
+          return Column(
+            children: [
+              OrderUnit(
+                  title: order.title, number: order.number, time: order.time),
+            ],
+          );
+        });
   }
 }
