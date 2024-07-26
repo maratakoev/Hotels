@@ -408,7 +408,7 @@ class OrderDetails extends StatelessWidget {
                     child: Row(
                       children: [
                         const Text(
-                          'Время завершения',
+                          'Время завершенияо',
                           style: roomTimesDetails,
                         ),
                         Expanded(child: Container()),
