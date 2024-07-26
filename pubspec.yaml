@@ -68,6 +68,7 @@ flutter:
     - assets/images/NewOrders.png
     - assets/images/CurrentOrders.png
     - assets/images/DoneOrders.png
+    - assets/images/NewOrdersGreen.png
 
     - assets/fonts/
   fonts:

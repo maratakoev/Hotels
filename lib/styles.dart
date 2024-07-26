@@ -25,6 +25,16 @@ const BoxDecoration commonButtonStyle = BoxDecoration(
   ),
 );
 
+const BoxDecoration commonButtonStyleRed = BoxDecoration(
+  borderRadius: BorderRadius.all(Radius.circular(15)),
+  gradient: LinearGradient(
+    colors: [
+      Color.fromRGBO(255, 123, 147, 1),
+      Color.fromRGBO(250, 29, 29, 1),
+    ],
+  ),
+);
+
 const TextStyle dropDownButtonText = TextStyle(
   fontFamily: 'Philosopher',
   fontSize: 14,
@@ -50,3 +60,50 @@ const TextStyle ordersTime = TextStyle(
     fontWeight: FontWeight.w600,
     fontFamily: 'Philosopher',
     color: Color.fromRGBO(59, 59, 59, 1));
+
+const TextStyle roomNumberInOrderDetails = TextStyle(
+  fontFamily: 'Philosopher',
+  fontSize: 16,
+  fontWeight: FontWeight.w700,
+  letterSpacing: 0.5,
+  height: 1.12,
+);
+
+const TextStyle roomTitleInOrderDetails = TextStyle(
+  fontFamily: 'Philosopher',
+  fontSize: 16,
+  fontWeight: FontWeight.w400,
+  letterSpacing: 0.5,
+  height: 1.12,
+);
+
+const TextStyle roomOrderHeaderDetails = TextStyle(
+  fontFamily: 'Philosopher',
+  fontSize: 12,
+  fontWeight: FontWeight.w400,
+  letterSpacing: 0.5,
+  height: 1.12,
+);
+
+const TextStyle roomTimesDetails = TextStyle(
+  fontFamily: 'Philosopher',
+  fontSize: 11,
+  fontWeight: FontWeight.w400,
+  letterSpacing: 0.5,
+  height: 1.12,
+);
+
+const TextStyle buttonTextDetails = TextStyle(
+  fontFamily: 'Philosopher',
+  color: Colors.white,
+  fontSize: 12,
+  fontWeight: FontWeight.w400,
+  letterSpacing: 0.5,
+  height: 1.12,
+);
+
+// const BoxDecoration agreeButtonDetails = BoxDecoration(
+//   padding: EdgeInsets.symmetric(
+//       horizontal: 40, vertical: 20), // Отступы внутри кнопки
+// );
+
